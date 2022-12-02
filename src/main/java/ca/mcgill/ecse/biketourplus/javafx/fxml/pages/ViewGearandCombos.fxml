@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane gridLinesVisible="true" hgap="3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="482.0" vgap="3.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.mcgill.ecse.biketourplus.javafx.fxml.controllers.ViewGearandCombosController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="214.99999084472657" minHeight="3.0000091433525142" prefHeight="70.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="472.0000053405762" minHeight="10.0" prefHeight="46.599999999999994" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="472.0000053405762" minHeight="10.0" prefHeight="46.599999999999994" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="472.0000053405762" minHeight="0.0" prefHeight="383.4" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <GridPane layoutX="13.0" layoutY="94.0" GridPane.rowIndex="2">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="addComboButton" layoutX="23.0" layoutY="20.0" mnemonicParsing="false" onAction="#addComboButtonClicked" text="Add Combo" GridPane.halignment="CENTER" />
+            <Button fx:id="updateComboButton" mnemonicParsing="false" onAction="#updateComboButtonClicked" text="Update Combo" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+            <Button fx:id="deleteComboButton" mnemonicParsing="false" onAction="#deleteComboButtonClicked" text="Delete Combo" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+         </children>
+      </GridPane>
+      <GridPane GridPane.rowIndex="3">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="233.20001220703125" minWidth="10.0" prefWidth="117.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="359.0" minWidth="10.0" prefWidth="359.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ListView fx:id="comboList" prefHeight="200.0" prefWidth="162.0">
+               <GridPane.margin>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </GridPane.margin>
+            </ListView>
+            <GridPane GridPane.columnIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="158.39996337890625" minWidth="10.0" prefWidth="64.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="295.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="233.0" minHeight="10.0" prefHeight="233.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="97.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Name" GridPane.halignment="CENTER" />
+                  <TextField fx:id="comboTextField" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Gear" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Label text="Gear Qty" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TextField fx:id="quantityTextField" maxWidth="-Infinity" prefHeight="26.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER">
+                           <GridPane.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Button fx:id="addOneButton" mnemonicParsing="false" onAction="#addOneButtonClicked" text="Add 1" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                        <Button fx:id="removeOneButton" mnemonicParsing="false" onAction="#removeOneButtonClicked" text="Remove 1" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                        <Button fx:id="removeGearButton" mnemonicParsing="false" onAction="#removeGearButtonClicked" text="Remove" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+                     </children>
+                  </GridPane>
+                  <Label text="Discount" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <TextField fx:id="discountTextField" maxWidth="-Infinity" prefHeight="26.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints />
+                    </rowConstraints>
+                     <children>
+                        <ListView fx:id="gearIncludedList" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </GridPane.margin>
+                        </ListView>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                          <rowConstraints>
+                            <RowConstraints maxHeight="159.0" minHeight="10.0" prefHeight="159.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="97.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button fx:id="addGearButton" mnemonicParsing="false" onAction="#addGearButtonClicked" text="Add Gear" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                              <ListView fx:id="gearToAddList" prefHeight="200.0" prefWidth="200.0">
+                                 <GridPane.margin>
+                                    <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                                 </GridPane.margin>
+                              </ListView>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints />
+                           </columnConstraints>
+                        </GridPane>
+                        <Label text="Gear in Combo" GridPane.halignment="CENTER" />
+                        <Label text="Gear to Add" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+      <GridPane maxHeight="-Infinity" prefHeight="70.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="221.33331298828125" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="392.6666564941406" minWidth="10.0" prefWidth="385.3333435058594" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Manage Combos" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <Button fx:id="refreshComboButton" mnemonicParsing="false" onAction="#RefreshButtonClicked" text="Refresh" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+         </children>
+      </GridPane>
+      <GridPane GridPane.rowIndex="1">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.6666259765625" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="396.66668701171875" minWidth="10.0" prefWidth="375.3333435058594" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="searchComboButton" mnemonicParsing="false" onAction="#searchComboClicked" text="Search" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <TextField fx:id="searchComboField" promptText="Enter a combo name" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+   </children>
+   <padding>
+      <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+   </padding>
+</GridPane>

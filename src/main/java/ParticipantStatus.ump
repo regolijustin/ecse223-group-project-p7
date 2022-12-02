@@ -1,0 +1,59 @@
+class Participant {
+  Status {
+	    NotAssigned {
+	      deleteParticipant() / {
+	        delete();
+	      } -> Final;
+	      assign(Participant aParticipant)  -> Assigned;
+	      cancel(Participant aParticipant) -> Cancelled;
+	    }
+	    Assigned {
+	      deleteParticipant() / {
+	        delete();
+	      } -> Final;
+	      startBikeTour(Participant aParticipant)
+	        [aParticipant.hasBikeTour()] -> Banned;
+	      pay(Participant aParticipant)
+	         -> Paid;
+	      cancel(Participant aParticipant) -> Cancelled;
+
+	      unassign(Participant aParticipant) [aParticipant.hasBikeTour()] / {
+	        aParticipant.setBikeTour(null);
+	      } -> NotAssigned;
+	    }
+	    Paid {
+	      deleteParticipant() / {
+	        delete();
+
+	      } -> Final;
+	        cancel(Participant aParticipant) -> Cancelled;
+	      startBikeTour(Participant aParticipant) -> Started;
+	    }
+	    Started {
+	      deleteParticipant() / {
+	        delete();
+	      } -> Final;
+	      cancel(Participant aParticipant) -> Cancelled;
+	      endBikeTour(Participant aParticipant) -> Finished;
+	    }
+	    Banned {
+	      //You are banned forever
+	      deleteParticipant() /{
+	        delete();
+	      } -> Final;
+	    }
+	    Cancelled {
+	      deleteParticipant() / {
+	        delete();
+	      } -> Final;
+	    }
+	    Finished {
+	      deleteParticipant() / {
+	        delete();
+	      } -> Final;
+	    }
+	  }
+	  //public boolean hasPaid() {}
+	  //public void pay() {}
+	  //public void refund() {}
+  }

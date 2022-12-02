@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="629.0" prefWidth="484.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.mcgill.ecse.biketourplus.javafx.fxml.BtpFxmlView">
+   <children>
+      <Pane fx:id="display" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="598.0" prefWidth="483.0" VBox.vgrow="ALWAYS">
+         <children>
+            <fx:include fx:id="viewBikeTours" source="pages/ViewBiketours.fxml" />
+            <fx:include fx:id="viewUsers" source="pages/ViewUsers.fxml" />
+            <fx:include fx:id="mainPage" source="pages/CreateBiketour.fxml" />
+            <fx:include fx:id="setting" source="pages/Settings.fxml" />
+            <fx:include fx:id="viewGears" source="pages/ManageGear.fxml" />
+         </children>
+      </Pane>
+      <ButtonBar maxHeight="1.7976931348623157E308" nodeOrientation="LEFT_TO_RIGHT" prefWidth="484.0" VBox.vgrow="ALWAYS">
+        <buttons>
+          <Button fx:id="home" alignment="CENTER" contentDisplay="CENTER" maxWidth="100.0" mnemonicParsing="false" onMouseClicked="#home" prefWidth="100.0" text="Home" translateX="-10.0" />
+            <Button fx:id="scheduledTour" contentDisplay="CENTER" maxWidth="100.0" mnemonicParsing="false" onMouseClicked="#scheduledTour" text="Bike Tour" translateX="-10.0" />
+            <Button fx:id="gAndpManager" contentDisplay="CENTER" maxWidth="100.0" mnemonicParsing="false" onMouseClicked="#gAndpManager" text="Users" translateX="-10.0" />
+            <Button fx:id="settings" contentDisplay="CENTER" maxWidth="100.0" mnemonicParsing="false" onMouseClicked="#settings" text="Settings" translateX="-10.0" />
+            <Button fx:id="gAndcManager" contentDisplay="CENTER" maxWidth="100.0" mnemonicParsing="false" onMouseClicked="#gAndcManager" text="Gears" translateX="-10.0" />
+        </buttons>
+      </ButtonBar>
+   </children>
+</VBox>

@@ -1,0 +1,54 @@
+
+class BikeTourPlus {
+  public void reinitialize() {
+    List<User> users = new ArrayList<>();
+        List<Participant> ps = getParticipants();
+        List<Guide> gs = getGuides();
+        users.addAll(ps);
+        users.addAll(gs);
+        User.reinitializeUniqueEmail(users);
+        List<BookableItem> items = new ArrayList<>();
+        List<Combo> combos = getCombos();
+        List<Gear> gears = getGear();
+        items.addAll(combos);
+        items.addAll(gears);
+        BookableItem.reinitializeUniqueName(items);
+        Lodge.reinitializeUniqueName(getLodges());
+        BikeTour.reinitializeUniqueID(getBikeTours());
+  }
+}
+
+class User {
+    public static void reinitializeUniqueEmail(List<User> users) {
+    usersByEmail.clear();
+    for (var user : users) {
+      usersByEmail.put(user.getEmail(), user);
+    }
+  }
+}
+class BookableItem {
+      public static void reinitializeUniqueName(List<BookableItem> items) {
+    bookableitemsByName.clear();
+    for (var bi : items) {
+      bookableitemsByName.put(bi.getName(), bi);
+    }
+  }
+}
+class Lodge {
+    public static void reinitializeUniqueName(List<Lodge> lodges) {
+    lodgesByName.clear();
+    for (var lodge : lodges) {
+      lodgesByName.put(lodge.getName(), lodge);
+    }
+  }
+}
+
+class BikeTour {
+   public static void reinitializeUniqueID(List<BikeTour> bikeTours) {
+    biketoursById.clear();
+    for (var bt : bikeTours) {
+      biketoursById.put(bt.getId(), bt);
+    }
+  }
+}
+
